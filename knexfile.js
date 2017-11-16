@@ -10,7 +10,7 @@ module.exports = {
   test: {
     client: 'pg',
     connection: {
-      database: process.env.DATABASE_URL || 'postmates-test',
+      database: process.env.DATABASE_URL_TEST,
     }
   },
 

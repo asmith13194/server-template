@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable("users", function (table) {
+  return knex.schema.createTable('users', function (table) {
   table.increments('id');
   table.string('first').notNullable();
   table.string('last').notNullable();
@@ -11,5 +11,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable("postemates");
+  return knex.schema.dropTable(process.env.DATABASE_URL);
 };
