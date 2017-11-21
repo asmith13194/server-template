@@ -55,7 +55,7 @@ router.post('/login',
   }
 );
 
-router.post('/update',
+router.put('/update',
   jwtVerifyMiddleWare,
   bcryptCompareMiddleWare,
   (req, res, next) => {
@@ -86,7 +86,7 @@ router.post('/update',
   }
 );
 
-router.post('/update/password',
+router.put('/update/password',
   jwtVerifyMiddleWare,
   bcryptCompareMiddleWare,
   bcryptHashMiddleWare,
@@ -118,7 +118,7 @@ router.post('/update/password',
   }
 );
 
-router.post('/deactivate',
+router.delete('/deactivate',
   jwtVerifyMiddleWare,
   bcryptCompareMiddleWare,
   (req, res) => {
@@ -133,7 +133,7 @@ router.post('/deactivate',
     .catch(err => {
       return res.send({
         success: false,
-        payload: 'There was an deactivating your account, please try again'
+        payload: 'There was an error deactivating your account, please try again'
       });
     });
   }

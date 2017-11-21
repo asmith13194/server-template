@@ -38,13 +38,12 @@ const bcryptHashMiddleWare = (req, res, next) => {
         req.body.payload.password = hash;
         return next()
       default:
-        console.log(bcryptErr);
         return res.send({
           success: false,
           payload: bcryptErr
         });
     }
-  });
+  })
 }
 
 const bcryptCompareMiddleWare = (req, res, next) => {
@@ -62,7 +61,7 @@ const bcryptCompareMiddleWare = (req, res, next) => {
             case false:
               return res.send({
                 success: false,
-                payload: 'invalid credentials'
+                payload: 'Invalid Credentials'
               });
             default:
               return res.send({
@@ -74,7 +73,7 @@ const bcryptCompareMiddleWare = (req, res, next) => {
       default:
         return res.send({
           success: false,
-          payload: 'invalid credentials'
+          payload: 'Invalid Credentials'
         });
     }
   })
